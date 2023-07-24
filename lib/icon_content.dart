@@ -24,7 +24,7 @@ class IconContent extends StatelessWidget {
         SizedBox(height: iconGap),
         Text(
           text,
-          style: TextStyle(fontSize: fontSize, color: color),
+          style: kLabelTextStyle.copyWith(color: color),
         )
       ],
     );

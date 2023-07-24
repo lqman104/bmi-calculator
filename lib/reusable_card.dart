@@ -1,8 +1,7 @@
 import 'package:flutter/cupertino.dart';
 
-const _cardBorderRadius = 15.0;
-
 class ReusableCard extends StatelessWidget {
+  static const _cardBorderRadius = 15.0;
   final Color color;
   final Widget? cardChild;
 

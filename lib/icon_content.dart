@@ -1,11 +1,10 @@
 
+import 'package:bmi_calculator/typography.dart';
 import 'package:flutter/material.dart';
 
-const iconSize = 80.0;
-const fontSize = 18.0;
-const iconGap = 15.0;
-
 class IconContent extends StatelessWidget {
+  static const iconGap = 15.0;
+  static const iconSize = 80.0;
   final IconData iconData;
   final String text;
   final Color? color;

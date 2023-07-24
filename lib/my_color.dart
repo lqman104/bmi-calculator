@@ -1,8 +1,6 @@
-import 'dart:ui';
-
 import 'package:flutter/material.dart';
 
-class MyColor {
+abstract class MyColor {
   static const Color primary = Color(0xFF0A0D22);
   static const Color secondary = Color(0xFFEB5555);
   static const Color cardBackground = Color(0xFF1D1E33);

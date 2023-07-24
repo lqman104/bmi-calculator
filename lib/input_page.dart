@@ -21,50 +21,65 @@ class _InputPageState extends State<InputPage> {
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
             Expanded(
-              child: Row(
-                crossAxisAlignment: CrossAxisAlignment.stretch,
-                children: [
-                  Expanded(
-                    child: GenderSelector(
-                      iconData: FontAwesomeIcons.mars,
-                      color: MyColor.disable,
-                      text: "MALE",
+              child: Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 16.0),
+                child: Row(
+                  crossAxisAlignment: CrossAxisAlignment.stretch,
+                  children: [
+                    Expanded(
+                      child: ReusableCard(
+                        color: MyColor.cardBackground,
+                        cardChild: IconContent(
+                          iconData: FontAwesomeIcons.mars,
+                          color: MyColor.disable,
+                          text: "MALE",
+                        ),
+                      ),
                     ),
-                  ),
-                  SizedBox(width: 16),
-                  Expanded(
-                    child: GenderSelector(
-                      iconData: FontAwesomeIcons.venus,
-                      color: MyColor.disable,
-                      text: "FEMALE",
-                    ),
-                  )
-                ],
+                    SizedBox(width: 16),
+                    Expanded(
+                      child: ReusableCard(
+                        color: MyColor.cardBackground,
+                        cardChild: IconContent(
+                          iconData: FontAwesomeIcons.venus,
+                          color: MyColor.disable,
+                          text: "FEMALE",
+                        ),
+                      ),
+                    )
+                  ],
+                ),
               ),
             ),
             SizedBox(height: 16),
             Expanded(
-              child: ReusableCard(
-                color: MyColor.cardBackground,
+              child: Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 16.0),
+                child: ReusableCard(
+                  color: MyColor.cardBackground,
+                ),
               ),
             ),
             SizedBox(height: 16),
             Expanded(
-              child: Row(
-                crossAxisAlignment: CrossAxisAlignment.stretch,
-                children: [
-                  Expanded(
-                    child: ReusableCard(
-                      color: MyColor.cardBackground,
+              child: Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 16.0),
+                child: Row(
+                  crossAxisAlignment: CrossAxisAlignment.stretch,
+                  children: [
+                    Expanded(
+                      child: ReusableCard(
+                        color: MyColor.cardBackground,
+                      ),
                     ),
-                  ),
-                  SizedBox(width: 16),
-                  Expanded(
-                    child: ReusableCard(
-                      color: MyColor.cardBackground,
+                    SizedBox(width: 16),
+                    Expanded(
+                      child: ReusableCard(
+                        color: MyColor.cardBackground,
+                      ),
                     ),
-                  ),
-                ],
+                  ],
+                ),
               ),
             ),
             Container(
@@ -80,34 +95,29 @@ class _InputPageState extends State<InputPage> {
   }
 }
 
-class GenderSelector extends StatelessWidget {
-  
+class IconContent extends StatelessWidget {
   final IconData iconData;
   final String text;
   final Color? color;
 
-  GenderSelector({required this.iconData, required this.text, this.color});
-  
+  IconContent({required this.iconData, required this.text, this.color});
+
   @override
   Widget build(BuildContext context) {
-    return ReusableCard(
-      color: MyColor.cardBackground,
-      cardChild: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          Icon(
-            iconData,
-            color: color,
-            size: 80.0,
-          ),
-          SizedBox(height: 15),
-          Text(
-            text,
-            style: TextStyle(
-                fontSize: 18.0, color: MyColor.disable),
-          )
-        ],
-      ),
+    return Column(
+      mainAxisAlignment: MainAxisAlignment.center,
+      children: [
+        Icon(
+          iconData,
+          color: color,
+          size: 80.0,
+        ),
+        SizedBox(height: 15),
+        Text(
+          text,
+          style: TextStyle(fontSize: 18.0, color: MyColor.disable),
+        )
+      ],
     );
   }
 }

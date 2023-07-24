@@ -1,6 +1,9 @@
 import 'package:bmi_calculator/my_color.dart';
+import 'package:bmi_calculator/reusable_card.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+
+import 'icon_content.dart';
 
 const bottomContainerHeight = 80.0;
 
@@ -90,51 +93,6 @@ class _InputPageState extends State<InputPage> {
             ),
           ],
         ),
-      ),
-    );
-  }
-}
-
-class IconContent extends StatelessWidget {
-  final IconData iconData;
-  final String text;
-  final Color? color;
-
-  IconContent({required this.iconData, required this.text, this.color});
-
-  @override
-  Widget build(BuildContext context) {
-    return Column(
-      mainAxisAlignment: MainAxisAlignment.center,
-      children: [
-        Icon(
-          iconData,
-          color: color,
-          size: 80.0,
-        ),
-        SizedBox(height: 15),
-        Text(
-          text,
-          style: TextStyle(fontSize: 18.0, color: MyColor.disable),
-        )
-      ],
-    );
-  }
-}
-
-class ReusableCard extends StatelessWidget {
-  final Color color;
-  final Widget? cardChild;
-
-  ReusableCard({required this.color, this.cardChild});
-
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      child: cardChild,
-      decoration: BoxDecoration(
-        color: color,
-        borderRadius: BorderRadius.circular(15),
       ),
     );
   }

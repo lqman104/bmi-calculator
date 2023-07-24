@@ -1,4 +1,3 @@
-
 import 'package:bmi_calculator/typography.dart';
 import 'package:flutter/material.dart';
 

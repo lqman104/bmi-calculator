@@ -6,6 +6,7 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 import 'gender.dart';
 import 'icon_content.dart';
+import 'input_range.dart';
 
 const bottomContainerHeight = 80.0;
 
@@ -17,6 +18,8 @@ class InputPage extends StatefulWidget {
 class _InputPageState extends State<InputPage> {
   Gender? gender;
   int height = 180;
+  int weight = 60;
+  int age = 20;
 
   @override
   Widget build(BuildContext context) {
@@ -36,12 +39,12 @@ class _InputPageState extends State<InputPage> {
                   children: [
                     Expanded(
                       child: ReusableCard(
-                        color: MyColor.cardBackground,
+                        color: MyColor.black700,
                         cardChild: IconContent(
                           iconData: FontAwesomeIcons.mars,
                           color: gender == Gender.male
-                              ? MyColor.enable
-                              : MyColor.disable,
+                              ? Colors.white
+                              : MyColor.black300,
                           text: "MALE",
                         ),
                         onClick: () {
@@ -54,12 +57,12 @@ class _InputPageState extends State<InputPage> {
                     SizedBox(width: 16),
                     Expanded(
                       child: ReusableCard(
-                        color: MyColor.cardBackground,
+                        color: MyColor.black700,
                         cardChild: IconContent(
                           iconData: FontAwesomeIcons.venus,
                           color: gender == Gender.female
-                              ? MyColor.enable
-                              : MyColor.disable,
+                              ? Colors.white
+                              : MyColor.black300,
                           text: "FEMALE",
                         ),
                         onClick: () {
@@ -78,7 +81,7 @@ class _InputPageState extends State<InputPage> {
               child: Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 16.0),
                 child: ReusableCard(
-                  color: MyColor.cardBackground,
+                  color: MyColor.black800,
                   cardChild: Column(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
@@ -101,7 +104,7 @@ class _InputPageState extends State<InputPage> {
                       SliderTheme(
                         data: SliderTheme.of(context).copyWith(
                             activeTrackColor: Colors.white,
-                            inactiveTrackColor: MyColor.disable,
+                            inactiveTrackColor: MyColor.black300,
                             thumbColor: MyColor.secondary,
                             overlayColor: MyColor.secondary.withAlpha(15),
                             thumbShape:
@@ -133,13 +136,45 @@ class _InputPageState extends State<InputPage> {
                   children: [
                     Expanded(
                       child: ReusableCard(
-                        color: MyColor.cardBackground,
+                        color: MyColor.black800,
+                        cardChild: InputRange(
+                          label: "WEIGHT",
+                          value: weight.toString(),
+                          onPlusClicked: () {
+                            setState(() {
+                              weight++;
+                            });
+                          },
+                          onMinusClicked: () {
+                            setState(() {
+                              if (weight > 0) {
+                                weight--;
+                              }
+                            });
+                          },
+                        ),
                       ),
                     ),
                     SizedBox(width: 16),
                     Expanded(
                       child: ReusableCard(
-                        color: MyColor.cardBackground,
+                        color: MyColor.black800,
+                        cardChild: InputRange(
+                          label: "AGE",
+                          value: age.toString(),
+                          onPlusClicked: () {
+                            setState(() {
+                              age++;
+                            });
+                          },
+                          onMinusClicked: () {
+                            setState(() {
+                              if (age > 1) {
+                                age--;
+                              }
+                            });
+                          },
+                        ),
                       ),
                     ),
                   ],

@@ -3,6 +3,10 @@ import 'package:flutter/material.dart';
 
 import 'my_color.dart';
 
+const iconSize = 80.0;
+const fontSize = 18.0;
+const iconGap = 15.0;
+
 class IconContent extends StatelessWidget {
   final IconData iconData;
   final String text;
@@ -18,12 +22,12 @@ class IconContent extends StatelessWidget {
         Icon(
           iconData,
           color: color,
-          size: 80.0,
+          size: iconSize,
         ),
-        SizedBox(height: 15),
+        SizedBox(height: iconGap),
         Text(
           text,
-          style: TextStyle(fontSize: 18.0, color: MyColor.disable),
+          style: TextStyle(fontSize: fontSize, color: MyColor.disable),
         )
       ],
     );

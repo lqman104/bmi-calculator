@@ -1,8 +1,6 @@
 
 import 'package:flutter/material.dart';
 
-import 'my_color.dart';
-
 const iconSize = 80.0;
 const fontSize = 18.0;
 const iconGap = 15.0;
@@ -27,7 +25,7 @@ class IconContent extends StatelessWidget {
         SizedBox(height: iconGap),
         Text(
           text,
-          style: TextStyle(fontSize: fontSize, color: MyColor.disable),
+          style: TextStyle(fontSize: fontSize, color: color),
         )
       ],
     );

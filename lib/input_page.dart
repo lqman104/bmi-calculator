@@ -3,6 +3,7 @@ import 'package:bmi_calculator/reusable_card.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
+import 'gender.dart';
 import 'icon_content.dart';
 
 const bottomContainerHeight = 80.0;
@@ -13,6 +14,9 @@ class InputPage extends StatefulWidget {
 }
 
 class _InputPageState extends State<InputPage> {
+
+  Gender? gender;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -30,23 +34,37 @@ class _InputPageState extends State<InputPage> {
                   crossAxisAlignment: CrossAxisAlignment.stretch,
                   children: [
                     Expanded(
-                      child: ReusableCard(
-                        color: MyColor.cardBackground,
-                        cardChild: IconContent(
-                          iconData: FontAwesomeIcons.mars,
-                          color: MyColor.disable,
-                          text: "MALE",
+                      child: GestureDetector(
+                        onTap: () {
+                          setState(() {
+                            gender = Gender.male;
+                          });
+                        },
+                        child: ReusableCard(
+                          color: MyColor.cardBackground,
+                          cardChild: IconContent(
+                            iconData: FontAwesomeIcons.mars,
+                            color: gender == Gender.male ? MyColor.enable : MyColor.disable,
+                            text: "MALE",
+                          ),
                         ),
                       ),
                     ),
                     SizedBox(width: 16),
                     Expanded(
-                      child: ReusableCard(
-                        color: MyColor.cardBackground,
-                        cardChild: IconContent(
-                          iconData: FontAwesomeIcons.venus,
-                          color: MyColor.disable,
-                          text: "FEMALE",
+                      child: GestureDetector(
+                        onTap: () {
+                          setState(() {
+                            gender = Gender.female;
+                          });
+                        },
+                        child: ReusableCard(
+                          color: MyColor.cardBackground,
+                          cardChild: IconContent(
+                            iconData: FontAwesomeIcons.venus,
+                            color: gender == Gender.female ? MyColor.enable : MyColor.disable,
+                            text: "FEMALE",
+                          ),
                         ),
                       ),
                     )

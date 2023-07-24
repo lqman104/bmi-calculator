@@ -16,62 +16,59 @@ class _InputPageState extends State<InputPage> {
         title: Text('BMI CALCULATOR'),
       ),
       body: SafeArea(
-        child: Padding(
-          padding: const EdgeInsets.all(16.0),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.stretch,
-            children: [
-              Expanded(
-                child: Row(
-                  crossAxisAlignment: CrossAxisAlignment.stretch,
-                  children: [
-                    Expanded(
-                      child: ReusableCard(
-                        color: MyColor.cardBackground,
-                      ),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.stretch,
+          children: [
+            Expanded(
+              child: Row(
+                crossAxisAlignment: CrossAxisAlignment.stretch,
+                children: [
+                  Expanded(
+                    child: ReusableCard(
+                      color: MyColor.cardBackground,
                     ),
-                    SizedBox(width: 16),
-                    Expanded(
-                      child: ReusableCard(
-                        color: MyColor.cardBackground,
-                      ),
-                    )
-                  ],
-                ),
-              ),
-              SizedBox(height: 16),
-              Expanded(
-                child: ReusableCard(
-                  color: MyColor.cardBackground,
-                ),
-              ),
-              SizedBox(height: 16),
-              Expanded(
-                child: Row(
-                  crossAxisAlignment: CrossAxisAlignment.stretch,
-                  children: [
-                    Expanded(
-                      child: ReusableCard(
-                        color: MyColor.cardBackground,
-                      ),
+                  ),
+                  SizedBox(width: 16),
+                  Expanded(
+                    child: ReusableCard(
+                      color: MyColor.cardBackground,
                     ),
-                    SizedBox(width: 16),
-                    Expanded(
-                      child: ReusableCard(
-                        color: MyColor.cardBackground,
-                      ),
+                  )
+                ],
+              ),
+            ),
+            SizedBox(height: 16),
+            Expanded(
+              child: ReusableCard(
+                color: MyColor.cardBackground,
+              ),
+            ),
+            SizedBox(height: 16),
+            Expanded(
+              child: Row(
+                crossAxisAlignment: CrossAxisAlignment.stretch,
+                children: [
+                  Expanded(
+                    child: ReusableCard(
+                      color: MyColor.cardBackground,
                     ),
-                  ],
-                ),
+                  ),
+                  SizedBox(width: 16),
+                  Expanded(
+                    child: ReusableCard(
+                      color: MyColor.cardBackground,
+                    ),
+                  ),
+                ],
               ),
-              Container(
-                width: double.infinity,
-                height: bottomContainerHeight,
-                margin: EdgeInsets.only(top: 10),
-                color: MyColor.secondary,
-              ),
-            ],
-          ),
+            ),
+            Container(
+              width: double.infinity,
+              height: bottomContainerHeight,
+              margin: EdgeInsets.only(top: 10),
+              color: MyColor.secondary,
+            ),
+          ],
         ),
       ),
     );

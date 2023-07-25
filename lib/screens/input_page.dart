@@ -1,13 +1,13 @@
+import 'package:bmi_calculator/components/reusable_card.dart';
+import 'package:bmi_calculator/constants/typography.dart';
 import 'package:bmi_calculator/routes.dart';
-import 'package:bmi_calculator/my_color.dart';
-import 'package:bmi_calculator/reusable_card.dart';
-import 'package:bmi_calculator/typography.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
-import 'gender.dart';
-import 'icon_content.dart';
-import 'input_range.dart';
+import '../components/icon_content.dart';
+import '../components/input_range.dart';
+import '../constants/gender.dart';
+import '../constants/my_color.dart';
 
 const bottomContainerHeight = 80.0;
 

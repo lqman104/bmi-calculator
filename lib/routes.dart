@@ -1,5 +1,5 @@
-import 'package:bmi_calculator/input_page.dart';
-import 'package:bmi_calculator/result_page.dart';
+import 'package:bmi_calculator/screens/input_page.dart';
+import 'package:bmi_calculator/screens/result_page.dart';
 import 'package:flutter/cupertino.dart';
 
 abstract class Routes {

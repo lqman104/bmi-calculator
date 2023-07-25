@@ -1,7 +1,7 @@
 import 'package:bmi_calculator/routes.dart';
 import 'package:flutter/material.dart';
 
-import 'my_color.dart';
+import 'constants/my_color.dart';
 
 void main() => runApp(BMICalculator());
 

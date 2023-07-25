@@ -2,11 +2,15 @@ import 'package:bmi_calculator/components/bottom_button.dart';
 import 'package:bmi_calculator/components/reusable_card.dart';
 import 'package:bmi_calculator/constants/my_color.dart';
 import 'package:bmi_calculator/constants/typography.dart';
+import 'package:bmi_calculator/model/bmi_result.dart';
 import 'package:flutter/material.dart';
 
 class ResultPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+
+    final args = ModalRoute.of(context)?.settings.arguments as BmiResult;
+
     return Scaffold(
       appBar: AppBar(
         title: Text("BMI CALCULATOR"),
@@ -39,18 +43,18 @@ class ResultPage extends StatelessWidget {
                     crossAxisAlignment: CrossAxisAlignment.center,
                     children: [
                       Text(
-                        "Normal",
+                        args.result,
                         style: kNormalTextStyle.copyWith(
                           color: Colors.green,
                           fontWeight: FontWeight.bold,
                         ),
                       ),
                       Text(
-                        "23.3",
+                        args.bmi,
                         style: kTitleLargeTextStyle,
                       ),
                       Text(
-                        "You overweight",
+                        args.interpretation,
                         style: kNormalTextStyle,
                         textAlign: TextAlign.center,
                       ),

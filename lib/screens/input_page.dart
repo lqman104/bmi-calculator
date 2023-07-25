@@ -4,11 +4,15 @@ import 'package:bmi_calculator/routes.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
+import '../calculator_brain.dart';
 import '../components/bottom_button.dart';
 import '../components/icon_content.dart';
 import '../components/input_range.dart';
 import '../constants/gender.dart';
 import '../constants/my_color.dart';
+import '../model/bmi_result.dart';
+
+late CalculatorBrain calculatorBrain;
 
 class InputPage extends StatefulWidget {
   @override
@@ -184,7 +188,21 @@ class _InputPageState extends State<InputPage> {
             BottomButton(
               text: "CALCULATE",
               onClick: () {
-                Navigator.pushNamed(context, Routes.kResultPage);
+                calculatorBrain =
+                    CalculatorBrain(height: height, weight: weight);
+                String bmi = calculatorBrain.calculateBMI();
+                String result = calculatorBrain.getResult();
+                String interpretation = calculatorBrain.getInterpretation();
+
+                Navigator.pushNamed(
+                  context,
+                  Routes.kResultPage,
+                  arguments: BmiResult(
+                    bmi: bmi,
+                    result: result,
+                    interpretation: interpretation,
+                  ),
+                );
               },
             ),
           ],

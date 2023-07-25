@@ -43,7 +43,7 @@ class ResultPage extends StatelessWidget {
                     crossAxisAlignment: CrossAxisAlignment.center,
                     children: [
                       Text(
-                        args.result,
+                        args.result.toUpperCase(),
                         style: kNormalTextStyle.copyWith(
                           color: Colors.green,
                           fontWeight: FontWeight.bold,

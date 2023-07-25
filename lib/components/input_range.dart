@@ -25,7 +25,7 @@ class InputRange extends StatelessWidget {
         SizedBox(height: 4),
         Text(
           value,
-          style: kTitleTextStyle.copyWith(color: Colors.white),
+          style: kNumberTextStyle,
         ),
         Row(
           mainAxisAlignment: MainAxisAlignment.center,

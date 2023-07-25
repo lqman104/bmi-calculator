@@ -4,12 +4,11 @@ import 'package:bmi_calculator/routes.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
+import '../components/bottom_button.dart';
 import '../components/icon_content.dart';
 import '../components/input_range.dart';
 import '../constants/gender.dart';
 import '../constants/my_color.dart';
-
-const bottomContainerHeight = 80.0;
 
 class InputPage extends StatefulWidget {
   @override
@@ -96,7 +95,7 @@ class _InputPageState extends State<InputPage> {
                           Text(
                             height.toString(),
                             style:
-                                kTitleTextStyle.copyWith(color: Colors.white),
+                                kNumberTextStyle.copyWith(color: Colors.white),
                           ),
                           SizedBox(width: 4),
                           Text("cm", style: kLabelTextStyle),
@@ -182,22 +181,11 @@ class _InputPageState extends State<InputPage> {
                 ),
               ),
             ),
-            GestureDetector(
-              onTap: () {
+            BottomButton(
+              text: "CALCULATE",
+              onClick: () {
                 Navigator.pushNamed(context, Routes.kResultPage);
               },
-              child: Container(
-                width: double.infinity,
-                height: bottomContainerHeight,
-                margin: EdgeInsets.only(top: 10),
-                color: MyColor.secondary,
-                child: Center(
-                  child: Text(
-                    "CALCULATE",
-                    style: kLabelTextStyle.copyWith(color: Colors.white),
-                  ),
-                ),
-              ),
             ),
           ],
         ),

@@ -1,3 +1,4 @@
+import 'package:bmi_calculator/routes.dart';
 import 'package:bmi_calculator/my_color.dart';
 import 'package:bmi_calculator/reusable_card.dart';
 import 'package:bmi_calculator/typography.dart';
@@ -181,11 +182,22 @@ class _InputPageState extends State<InputPage> {
                 ),
               ),
             ),
-            Container(
-              width: double.infinity,
-              height: bottomContainerHeight,
-              margin: EdgeInsets.only(top: 10),
-              color: MyColor.secondary,
+            GestureDetector(
+              onTap: () {
+                Navigator.pushNamed(context, Routes.kResultPage);
+              },
+              child: Container(
+                width: double.infinity,
+                height: bottomContainerHeight,
+                margin: EdgeInsets.only(top: 10),
+                color: MyColor.secondary,
+                child: Center(
+                  child: Text(
+                    "CALCULATE",
+                    style: kLabelTextStyle.copyWith(color: Colors.white),
+                  ),
+                ),
+              ),
             ),
           ],
         ),

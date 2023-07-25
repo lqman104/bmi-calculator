@@ -9,11 +9,12 @@ class InputRange extends StatelessWidget {
   final Function() onPlusClicked;
   final Function() onMinusClicked;
 
-  InputRange(
-      {required this.label,
-      required this.value,
-      required this.onPlusClicked,
-      required this.onMinusClicked});
+  InputRange({
+    required this.label,
+    required this.value,
+    required this.onPlusClicked,
+    required this.onMinusClicked,
+  });
 
   @override
   Widget build(BuildContext context) {
